@@ -52,6 +52,12 @@ void init_rect_dsc(lv_draw_rect_dsc_t *rect_dsc, lv_color_t bg_color) {
     rect_dsc->bg_color = bg_color;
 }
 
+void init_round_rect_dsc(lv_draw_rect_dsc_t *rect_dsc, lv_color_t bg_color, int32_t radius) {
+    lv_draw_rect_dsc_init(rect_dsc);
+    rect_dsc->bg_color = bg_color;
+    rect_dsc->radius = radius;
+}
+
 void init_line_dsc(lv_draw_line_dsc_t *line_dsc, lv_color_t color, uint8_t width) {
     lv_draw_line_dsc_init(line_dsc);
     line_dsc->color = color;

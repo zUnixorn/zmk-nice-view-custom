@@ -18,11 +18,21 @@ LOG_MODULE_DECLARE(zmk, CONFIG_ZMK_LOG_LEVEL);
 #include <zmk/events/battery_state_changed.h>
 #include <zmk/events/ble_active_profile_changed.h>
 #include <zmk/events/endpoint_changed.h>
+#include <zmk/events/keycode_state_changed.h>
 #include <zmk/events/layer_state_changed.h>
 #include <zmk/usb.h>
 #include <zmk/ble.h>
 #include <zmk/endpoints.h>
 #include <zmk/keymap.h>
+
+LV_IMG_DECLARE(alt);
+LV_IMG_DECLARE(ctrl);
+LV_IMG_DECLARE(gui);
+LV_IMG_DECLARE(shift);
+LV_IMG_DECLARE(alt_inv);
+LV_IMG_DECLARE(ctrl_inv);
+LV_IMG_DECLARE(gui_inv);
+LV_IMG_DECLARE(shift_inv);
 
 static sys_slist_t widgets = SYS_SLIST_STATIC_INIT(&widgets);
 
@@ -40,11 +50,27 @@ struct layer_status_state {
     const char *label;
 };
 
+struct modifier_status_state {
+    uint8_t modifiers;
+};
+
 static void draw_top(lv_obj_t *widget, const struct status_state *state) {
     lv_obj_t *canvas = lv_obj_get_child(widget, 0);
 
     lv_draw_label_dsc_t label_dsc;
     init_label_dsc(&label_dsc, LVGL_FOREGROUND, &lv_font_montserrat_16, LV_TEXT_ALIGN_RIGHT);
+    lv_draw_rect_dsc_t rect_black_dsc;
+    init_round_rect_dsc(&rect_black_dsc, LVGL_BACKGROUND, 5);
+    lv_draw_rect_dsc_t rect_white_dsc;
+    init_round_rect_dsc(&rect_white_dsc, LVGL_FOREGROUND, 5);
+    lv_draw_image_dsc_t alt_img_dsc;
+    lv_draw_image_dsc_init(&alt_img_dsc);
+    lv_draw_image_dsc_t ctrl_img_dsc;
+    lv_draw_image_dsc_init(&ctrl_img_dsc);
+    lv_draw_image_dsc_t gui_img_dsc;
+    lv_draw_image_dsc_init(&gui_img_dsc);
+    lv_draw_image_dsc_t shift_img_dsc;
+    lv_draw_image_dsc_init(&shift_img_dsc);
 
     // Fill background
     lv_canvas_fill_bg(canvas, LVGL_BACKGROUND, LV_OPA_COVER);
@@ -73,6 +99,44 @@ static void draw_top(lv_obj_t *widget, const struct status_state *state) {
     }
 
     canvas_draw_text(canvas, 0, 0, CANVAS_SIZE, &label_dsc, output_text);
+
+    // Draw modifiers
+
+    // top left
+    canvas_draw_rect(canvas, 1, 22, 32, 19, &rect_white_dsc);
+    if (state->ctrl) {
+        canvas_draw_rect(canvas, 2, 23, 30, 17, &rect_black_dsc);
+        canvas_draw_img(canvas, 5, 24, &ctrl, &ctrl_img_dsc);
+    } else {
+        canvas_draw_img(canvas, 5, 24, &ctrl_inv, &ctrl_img_dsc);
+    }
+
+    // top right
+    canvas_draw_rect(canvas, 1, 43, 32, 19, &rect_white_dsc);
+    if (state->shift) {
+        canvas_draw_rect(canvas, 2, 44, 30, 17, &rect_black_dsc);
+        canvas_draw_img(canvas, 5, 45, &shift, &shift_img_dsc);
+    } else {
+        canvas_draw_img(canvas, 5, 45, &shift_inv, &shift_img_dsc);
+    }
+
+    // bottom left
+    canvas_draw_rect(canvas, 35, 22, 32, 19, &rect_white_dsc);
+    if (state->gui) {
+        canvas_draw_rect(canvas, 36, 23, 30, 17, &rect_black_dsc);
+        canvas_draw_img(canvas, 39, 24, &gui, &gui_img_dsc);
+    } else {
+        canvas_draw_img(canvas, 39, 24, &gui_inv, &gui_img_dsc);
+    }
+
+    // bottom right
+    canvas_draw_rect(canvas, 35, 43, 32, 19, &rect_white_dsc);
+    if (state->alt) {
+        canvas_draw_rect(canvas, 36, 44, 30, 17, &rect_black_dsc);
+        canvas_draw_img(canvas, 39, 45, &alt, &alt_img_dsc);
+    } else {
+        canvas_draw_img(canvas, 39, 45, &alt_inv, &alt_img_dsc);
+    }
 
     // Rotate canvas
     rotate_canvas(canvas);
@@ -261,6 +325,29 @@ ZMK_DISPLAY_WIDGET_LISTENER(widget_layer_status, struct layer_status_state, laye
 
 ZMK_SUBSCRIPTION(widget_layer_status, zmk_layer_state_changed);
 
+static void set_modifier_status(struct zmk_widget_status *widget, struct modifier_status_state state) {
+    widget->state.alt = state.modifiers & (MOD_LALT | MOD_RALT);
+    widget->state.ctrl = state.modifiers & (MOD_LCTL | MOD_RCTL);
+    widget->state.gui = state.modifiers & (MOD_LGUI | MOD_RGUI);
+    widget->state.shift = state.modifiers & (MOD_LSFT | MOD_RSFT);
+
+    draw_top(widget->obj, &widget->state);
+}
+
+static void modifier_status_update_cb(struct modifier_status_state state) {
+    struct zmk_widget_status *widget;
+    SYS_SLIST_FOR_EACH_CONTAINER(&widgets, widget, node) { set_modifier_status(widget, state); }
+}
+
+struct modifier_status_state modifier_status_get_state(const zmk_event_t *eh) {
+    return (struct modifier_status_state){.modifiers = zmk_hid_get_explicit_mods()};
+};
+
+ZMK_DISPLAY_WIDGET_LISTENER(widget_modifier_status, struct modifier_status_state, modifier_status_update_cb,
+                            modifier_status_get_state)
+// use `zmk_keycode_state_changed` instead of `modifiers_state_changed` (see https://github.com/zmkfirmware/zmk/issues/144)
+ZMK_SUBSCRIPTION(widget_modifier_status, zmk_keycode_state_changed);
+
 int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
     widget->obj = lv_obj_create(parent);
     lv_obj_set_size(widget->obj, 160, 68);
@@ -278,6 +365,7 @@ int zmk_widget_status_init(struct zmk_widget_status *widget, lv_obj_t *parent) {
     widget_battery_status_init();
     widget_output_status_init();
     widget_layer_status_init();
+    widget_modifier_status_init();
 
     return 0;
 }

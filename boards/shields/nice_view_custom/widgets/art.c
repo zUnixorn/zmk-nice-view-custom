@@ -96,9 +96,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam1 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -190,9 +189,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam2 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -283,9 +281,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam3 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -377,9 +374,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam4 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -471,9 +467,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam5 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -565,9 +560,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam6 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -659,9 +653,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam7 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -753,9 +746,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam8 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -847,9 +839,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam9 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -941,9 +932,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam10 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -1035,9 +1025,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam11 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -1129,9 +1118,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam12 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -1223,9 +1211,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam13 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -1317,9 +1304,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam14 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -1411,9 +1397,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam15 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -1505,9 +1490,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam16 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -1599,9 +1583,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam17 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -1693,9 +1676,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam18 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -1787,9 +1769,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam19 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -1881,9 +1862,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam20 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -1975,9 +1955,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam21 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -2069,9 +2048,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam22 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -2163,9 +2141,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam23 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -2257,9 +2234,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam24 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -2351,9 +2327,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam25 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -2445,9 +2420,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam26 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -2539,9 +2513,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam27 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -2633,9 +2606,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam28 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -2727,9 +2699,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam29 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
@@ -2821,9 +2792,8 @@ const LV_ATTRIBUTE_MEM_ALIGN LV_ATTRIBUTE_LARGE_CONST LV_ATTRIBUTE_IMG_HAMMERBEA
 };
 
 const lv_img_dsc_t hammerbeam30 = {
-  .header.cf = LV_IMG_CF_INDEXED_1BIT,
-  .header.always_zero = 0,
-  .header.reserved = 0,
+  .header.cf = LV_COLOR_FORMAT_I1,
+
   .header.w = 140,
   .header.h = 68,
   .data_size = 1232,
